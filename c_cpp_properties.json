@@ -1,0 +1,25 @@
+{
+    "configurations": [
+        {
+            "name": "Win32",
+            "includePath": [
+                "D:/Program Files/CodeBlocks/MinGW/include/**",
+                "D:/Program Files/CodeBlocks/MinGW/include/ddk/**",
+                "D:/Program Files/CodeBlocks/MinGW/include/gdiplus/**",
+                "D:/Program Files/CodeBlocks/MinGW/include/GL/**",
+                "D:/Program Files/CodeBlocks/MinGW/include/sys/**",
+                "${workspaceFolder}/**"
+            ],
+            "defines": [
+                "_DEBUG",
+                "UNICODE",
+                "_UNICODE"
+            ],
+            "compilerPath": "D:\\Program Files\\CodeBlocks\\MinGW\\bin\\g++.exe",
+            "cStandard": "c11",
+            "cppStandard": "c++17",
+            "intelliSenseMode": "clang-x64"
+        }
+    ],
+    "version": 4
+}
