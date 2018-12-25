@@ -8,8 +8,8 @@ class ListView(QListView):
     def __init__(self,parent = None):
         super(ListView,self).__init__(parent)
         self.map_listview = []
-        self.m_pModel = ListModel()  
-        self.setModel(self.m_pModel)
+        # self.m_pModel = ListModel()  
+        # self.setModel(self.m_pModel)
 
     def contextMenuEvent(self, event):
         hitIndex = self.indexAt(event.pos()).column()

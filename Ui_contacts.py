@@ -9,6 +9,7 @@
 from PyQt5 import QtCore, QtGui, QtWidgets
 from ListView import ListView
 from ListModel import ListModel
+from label import Button
 
 class Ui_Dialog(object):
     def setupUi(self, Dialog):
@@ -65,7 +66,8 @@ class Ui_Dialog(object):
         self.listView.setGeometry(QtCore.QRect(0, 220, 391, 561))
         self.listView.setToolTip("")
         self.listView.setObjectName("listView")
-        self.pushButton_5 = QtWidgets.QPushButton(Dialog)
+        # self.pushButton_5 = QtWidgets.QPushButton(Dialog)
+        self.pushButton_5 = Button(Dialog)
         self.pushButton_5.setGeometry(QtCore.QRect(0, 780, 181, 28))
         self.pushButton_5.setText("")
         icon2 = QtGui.QIcon()
@@ -84,7 +86,7 @@ class Ui_Dialog(object):
         self.retranslateUi(Dialog)
         self.listView.doubleClicked['QModelIndex'].connect(Dialog.Chat)
         self.pushButton_6.clicked['bool'].connect(Dialog.AddContacts)
-        self.pushButton_5.clicked['bool'].connect(Dialog.SetSomething)
+        # self.pushButton_5.clicked['bool'].connect(Dialog.SetSomething)
         self.pushButton.clicked['bool'].connect(Dialog.ShowMessage)
         self.pushButton_2.clicked['bool'].connect(Dialog.ShowContacts)
         self.pushButton_3.clicked['bool'].connect(Dialog.ShowGroup)

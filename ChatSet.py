@@ -22,7 +22,7 @@ class chooseFile(QtWidgets.QMainWindow,Ui_Dialog):
         fileName_choose, filetype = QFileDialog.getOpenFileName(self,  
                                     "选取文件",  
                                     self.cwd, # 起始路径 
-                                    "All Files (*)")   # 设置文件扩展名过滤,用双分号间隔
+                                    "JPG Files (*.jpg);;PNG Files (*.png)")   # 设置文件扩展名过滤,用双分号间隔
         self.lineEdit.setText(fileName_choose)
 
     def SetMessage(self):

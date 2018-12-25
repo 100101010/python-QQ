@@ -6,13 +6,24 @@
 #
 # WARNING! All changes made in this file will be lost!
 
-from PyQt5 import QtCore, QtGui, QtWidgets
+from PyQt5 import QtCore, QtGui, QtWidgets,QtWebEngineWidgets
+from PyQt5.QtCore import *
+from PyQt5.QtWidgets import *
+from PyQt5.QtGui import *
+# from PyQt5.QtWebEngineWidgets import *
 
 class Ui_Dialog(object):
     def setupUi(self, Dialog):
         Dialog.setObjectName("Dialog")
         Dialog.resize(852, 531)
-        self.textEdit = QtWidgets.QTextEdit(Dialog)
+        # self.textEdit = QtWidgets.QTextEdit(Dialog)
+        self.textEdit = QtWebEngineWidgets.QWebEngineView(Dialog)
+        url = 'file:///F:/vs%20code%E5%B7%B2%E5%AE%8C%E6%88%90%E9%A1%B9%E7%9B%AE/HTML5/a.html'
+        # 指定打开界面的 URL
+        self.textEdit.setUrl(QUrl(url))
+        # 添加浏览器到窗口中
+        # self.setCentralWidget(self.browser)
+        self.textEdit.setContextMenuPolicy(Qt.NoContextMenu)
         self.textEdit.setGeometry(QtCore.QRect(0, 0, 851, 311))
         self.textEdit.setObjectName("textEdit")
         self.textEdit_2 = QtWidgets.QTextEdit(Dialog)

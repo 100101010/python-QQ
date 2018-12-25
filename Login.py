@@ -19,10 +19,11 @@ class mywindow(QtWidgets.QMainWindow,Ui_MainWindow):
     def __init__(self):
         super(mywindow,self).__init__()
         self.setupUi(self)
-        self.View = ContactsView()
         self.message = "账号或密码错误"
         self.message_2 = "请输入完整的账号和密码"
         self.form2 = register()
+        # self.pushButton.setShortcutEnabled(True)
+        self.pushButton.setShortcut(Qt.Key_Enter)
         self.lineEdit_2.setContextMenuPolicy(Qt.NoContextMenu)
         self.lineEdit_2.setEchoMode(QLineEdit.Password)
         self.lineEdit_2.setPlaceholderText("密码6-15位，只能有数字和字母")
@@ -140,5 +141,6 @@ class mywindow(QtWidgets.QMainWindow,Ui_MainWindow):
 
     def Login(self):
         name = self.lineEdit.text()
+        self.View = ContactsView(name)
         self.View.label.setText(name)
         self.View.show()

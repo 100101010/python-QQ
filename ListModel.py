@@ -2,12 +2,12 @@
 
 from PyQt5.QtCore import QAbstractListModel, Qt, QModelIndex, QVariant, QSize
 from PyQt5.QtGui import QIcon, QFont
-import Random_Name, random
 
 class ListModel(QAbstractListModel):
-    def __init__(self):
+    def __init__(self, DataList):
         super().__init__()     
         self.ListItemData = []
+        self.data = DataList
         self.Data_init()
        
     def data(self, index, role):
@@ -31,14 +31,16 @@ class ListModel(QAbstractListModel):
         return len(self.ListItemData)
 
     def Data_init(self):
-        for i in range(1, 8):
-            randname = Random_Name.getname()
-            ItemData = {'name':'', 'iconPath':'', 'signature':''}
-            ItemData['name'] = randname
-            ItemData['iconPath'] = "./res/"+ str(i) + ".jpg"
-            ItemData['signature'] = '暂无个性签名'
-            self.addItem(ItemData)
-            # self.ListItemData.append(ItemData)
+        for item in self.data:
+            self.addItem(item)
+        # for i in range(1, 8):
+        #     randname = Random_Name.getname()
+        #     ItemData = {'name':'', 'iconPath':'', 'signature':''}
+        #     ItemData['name'] = randname
+        #     ItemData['iconPath'] = "./res/"+ str(i) + ".jpg"
+        #     ItemData['signature'] = '暂无个性签名'
+        #     self.addItem(ItemData)
+
 
     def addItem(self, itemData):
         if itemData: 
